@@ -1,19 +1,28 @@
 {
   "hero": {
-    "eyebrow": "Independent Software Studio",
+    "eyebrow": "Independent Software Studio 1",
     "title": {
       "pre": "We build products people ",
       "accent": "love",
       "post": " to use."
     },
     "lede": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. VC Innovations Group is an independent studio designing and shipping human-centered software — starting with Wander, and the ideas that follow.",
-    "primaryBtn": { "label": "See our work", "href": "#ventures" },
-    "ghostBtn": { "label": "Our story", "href": "#about" },
+    "primaryBtn": {
+      "label": "See our work",
+      "href": "#ventures"
+    },
+    "ghostBtn": {
+      "label": "Our story",
+      "href": "#about"
+    },
     "image": {
       "src": "https://images.pexels.com/photos/33992262/pexels-photo-33992262.jpeg",
       "alt": "Dramatic coastal cliffs meeting the sea"
     },
-    "badge": { "title": "Wander", "subtitle": "Now in development" }
+    "badge": {
+      "title": "Wander",
+      "subtitle": "Now in development"
+    }
   },
   "approach": {
     "eyebrow": "What we do",
@@ -24,9 +33,21 @@
     },
     "lede": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. We take ideas from first sketch to shipped product.",
     "cards": [
-      { "num": "01", "title": "Product Studio", "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip." },
-      { "num": "02", "title": "Venture Building", "body": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat." },
-      { "num": "03", "title": "Engineering", "body": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa." }
+      {
+        "num": "01",
+        "title": "Product Studio",
+        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip."
+      },
+      {
+        "num": "02",
+        "title": "Venture Building",
+        "body": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat."
+      },
+      {
+        "num": "03",
+        "title": "Engineering",
+        "body": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa."
+      }
     ]
   },
   "ventures": {
@@ -81,8 +102,14 @@
       "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia."
     ],
     "founders": [
-      { "name": "Chris", "role": "Co-founder" },
-      { "name": "Vinny", "role": "Co-founder" }
+      {
+        "name": "Chris",
+        "role": "Co-founder"
+      },
+      {
+        "name": "Vinny",
+        "role": "Co-founder"
+      }
     ],
     "image": {
       "src": "https://images.pexels.com/photos/5325045/pexels-photo-5325045.jpeg",
