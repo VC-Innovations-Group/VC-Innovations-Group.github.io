@@ -53,15 +53,15 @@
   "ventures": {
     "eyebrow": "Our ventures",
     "heading": {
-      "pre": "One product live. ",
+      "pre": "One product in development. ",
       "accent": "More",
-      "post": " in the works."
+      "post": "on the road map."
     },
-    "lede": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Each venture starts as a question worth answering.",
+    "lede": "While our inaugural product is already underway, it is only the first step in our innovation journey. VC Innovations Group is committed to continuously exploring new opportunities and bringing transformative ideas to market.",
     "featured": {
       "pill": "In development",
       "title": "Wander",
-      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+      "body": "Wander reimagines travel planning by starting with your budget, not your destination. Instead of asking where you want to go, Wander helps you discover where you can go by matching your travel budget, dates, and interests with personalized destinations and experiences that fit your unique travel vibe.",
       "linkLabel": "Learn more →",
       "linkHref": "#contact",
       "image": {
@@ -72,8 +72,8 @@
     "mini": [
       {
         "pill": "Coming soon",
-        "title": "Venture II",
-        "body": "Lorem ipsum dolor sit amet consectetur.",
+        "title": "Social Cruising",
+        "body": "Planning a cruise with friends shouldn't require endless group texts, spreadsheets, and research. Our upcoming platform will help groups discover, compare, and coordinate cruise vacations based on budgets, travel preferences, and shared interests—all in one collaborative experience.",
         "image": {
           "src": "https://images.pexels.com/photos/969462/pexels-photo-969462.jpeg",
           "alt": "Person holding a smartphone"
@@ -81,8 +81,8 @@
       },
       {
         "pill": "On the roadmap",
-        "title": "Venture III",
-        "body": "Adipiscing elit sed do eiusmod tempor.",
+        "title": "Social Vault",
+        "body": "Social Vault is a personal digital repository that helps users save, organize, and rediscover the content that matters most across social media platforms. From recipes and travel ideas to home projects, products, and inspiration, Social Vault transforms scattered saved posts into a searchable, shareable, and organized library of your favorite online content.",
         "image": {
           "src": "https://images.pexels.com/photos/28378494/pexels-photo-28378494.jpeg",
           "alt": "Open road winding through mountains"
