@@ -10,7 +10,7 @@
     "primaryBtn": { "label": "See our work", "href": "#ventures" },
     "ghostBtn": { "label": "Our story", "href": "#about" },
     "image": {
-      "src": "https://images.pexels.com/photos/33992262/pexels-photo-33992262.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1100&h=1200",
+      "src": "https://images.pexels.com/photos/33992262/pexels-photo-33992262.jpeg",
       "alt": "Dramatic coastal cliffs meeting the sea"
     },
     "badge": { "title": "Wander", "subtitle": "Now in development" }
@@ -44,7 +44,7 @@
       "linkLabel": "Learn more →",
       "linkHref": "#contact",
       "image": {
-        "src": "https://images.pexels.com/photos/33851769/pexels-photo-33851769.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1000&h=900",
+        "src": "https://images.pexels.com/photos/33851769/pexels-photo-33851769.jpeg",
         "alt": "Whitewashed village with blue domes overlooking the sea"
       }
     },
@@ -54,7 +54,7 @@
         "title": "Venture II",
         "body": "Lorem ipsum dolor sit amet consectetur.",
         "image": {
-          "src": "https://images.pexels.com/photos/969462/pexels-photo-969462.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=800&h=600",
+          "src": "https://images.pexels.com/photos/969462/pexels-photo-969462.jpeg",
           "alt": "Person holding a smartphone"
         }
       },
@@ -63,7 +63,7 @@
         "title": "Venture III",
         "body": "Adipiscing elit sed do eiusmod tempor.",
         "image": {
-          "src": "https://images.pexels.com/photos/28378494/pexels-photo-28378494.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=800&h=600",
+          "src": "https://images.pexels.com/photos/28378494/pexels-photo-28378494.jpeg",
           "alt": "Open road winding through mountains"
         }
       }
@@ -85,7 +85,7 @@
       { "name": "Vinny", "role": "Co-founder" }
     ],
     "image": {
-      "src": "https://images.pexels.com/photos/5325045/pexels-photo-5325045.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1000&h=1000",
+      "src": "https://images.pexels.com/photos/5325045/pexels-photo-5325045.jpeg",
       "alt": "Two people collaborating over a laptop in a bright workspace"
     }
   },
