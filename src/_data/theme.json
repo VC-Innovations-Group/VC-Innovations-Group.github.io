@@ -1,0 +1,12 @@
+{
+  "colors": {
+    "cream": "#F0EBE0",
+    "card": "#FDFAF6",
+    "navy": "#1C3649",
+    "navyLight": "#2A4D65",
+    "rust": "#B85C38"
+  },
+  "maxWidth": 1080,
+  "headingFont": "dm-serif",
+  "bodyFont": "inter"
+}

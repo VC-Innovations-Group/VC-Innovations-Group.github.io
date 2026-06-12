@@ -1,0 +1,236 @@
+# Pages CMS configuration — defines the editing dashboard at app.pagescms.org
+# Docs: https://pagescms.org/docs/configuration/
+
+media:
+  input: src/media
+  output: /media
+
+content:
+  # ───────────────────────── Theme: colors & fonts ─────────────────────────
+  - name: theme
+    label: Theme (colors & fonts)
+    type: file
+    path: src/_data/theme.json
+    fields:
+      - name: colors
+        label: Brand colors (hex, e.g. #B85C38)
+        type: object
+        fields:
+          - { name: cream, label: "Page background (cream)", type: string }
+          - { name: card, label: "Card surface", type: string }
+          - { name: navy, label: "Primary text / dark", type: string }
+          - { name: navyLight, label: "Navy light", type: string }
+          - { name: rust, label: "Accent (rust)", type: string }
+      - { name: maxWidth, label: "Max content width (px)", type: number }
+      - name: headingFont
+        label: Heading font
+        type: select
+        options:
+          values:
+            - { name: dm-serif, label: DM Serif Display }
+            - { name: playfair, label: Playfair Display }
+            - { name: fraunces, label: Fraunces }
+            - { name: cormorant, label: Cormorant Garamond }
+            - { name: lora, label: Lora }
+            - { name: libre-caslon, label: Libre Caslon Display }
+      - name: bodyFont
+        label: Body font
+        type: select
+        options:
+          values:
+            - { name: inter, label: Inter }
+            - { name: work-sans, label: Work Sans }
+            - { name: dm-sans, label: DM Sans }
+            - { name: plus-jakarta, label: Plus Jakarta Sans }
+            - { name: nunito-sans, label: Nunito Sans }
+            - { name: source-sans, label: Source Sans 3 }
+            - { name: figtree, label: Figtree }
+
+  # ───────────────────────── Site & navigation ─────────────────────────
+  - name: site
+    label: Site & navigation
+    type: file
+    path: src/_data/site.json
+    fields:
+      - { name: brandName, label: Brand name, type: string }
+      - { name: monogram, label: "Logo monogram (e.g. VC)", type: string }
+      - { name: metaTitle, label: "Browser / SEO title", type: string }
+      - { name: metaDescription, label: SEO description, type: text }
+      - { name: url, label: Site URL, type: string }
+      - { name: contactEmail, label: Contact email, type: string }
+      - { name: location, label: Location, type: string }
+      - { name: navCtaLabel, label: Header button label, type: string }
+      - name: nav
+        label: Header nav links
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Label, type: string }
+          - { name: href, label: Link, type: string }
+      - name: footerCols
+        label: Footer columns
+        type: object
+        list: true
+        fields:
+          - { name: heading, label: Column heading, type: string }
+          - name: links
+            label: Links
+            type: object
+            list: true
+            fields:
+              - { name: label, label: Label, type: string }
+              - { name: href, label: "Link (leave blank for plain text)", type: string }
+
+  # ───────────────────────── Page content ─────────────────────────
+  - name: content
+    label: Page content
+    type: file
+    path: src/_data/copy.json
+    fields:
+      - name: hero
+        label: Hero
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - name: title
+            label: "Headline (accent word renders italic + rust)"
+            type: object
+            fields:
+              - { name: pre, label: Before accent, type: string }
+              - { name: accent, label: Accent word, type: string }
+              - { name: post, label: After accent, type: string }
+          - { name: lede, label: Intro paragraph, type: text }
+          - name: primaryBtn
+            label: Primary button
+            type: object
+            fields:
+              - { name: label, label: Label, type: string }
+              - { name: href, label: Link, type: string }
+          - name: ghostBtn
+            label: Secondary button
+            type: object
+            fields:
+              - { name: label, label: Label, type: string }
+              - { name: href, label: Link, type: string }
+          - name: image
+            label: Hero image
+            type: object
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text, type: string }
+          - name: badge
+            label: Floating badge
+            type: object
+            fields:
+              - { name: title, label: Title, type: string }
+              - { name: subtitle, label: Subtitle, type: string }
+
+      - name: approach
+        label: Approach section
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - name: heading
+            label: "Heading (accent word renders italic + rust)"
+            type: object
+            fields:
+              - { name: pre, label: Before accent, type: string }
+              - { name: accent, label: Accent word, type: string }
+              - { name: post, label: After accent, type: string }
+          - { name: lede, label: Intro paragraph, type: text }
+          - name: cards
+            label: Cards
+            type: object
+            list: true
+            fields:
+              - { name: num, label: "Number (e.g. 01)", type: string }
+              - { name: title, label: Title, type: string }
+              - { name: body, label: Body, type: text }
+
+      - name: ventures
+        label: Ventures section
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - name: heading
+            label: "Heading (accent word renders italic + rust)"
+            type: object
+            fields:
+              - { name: pre, label: Before accent, type: string }
+              - { name: accent, label: Accent word, type: string }
+              - { name: post, label: After accent, type: string }
+          - { name: lede, label: Intro paragraph, type: text }
+          - name: featured
+            label: Featured venture
+            type: object
+            fields:
+              - { name: pill, label: Status pill, type: string }
+              - { name: title, label: Title, type: string }
+              - { name: body, label: Body, type: text }
+              - { name: linkLabel, label: Link label, type: string }
+              - { name: linkHref, label: Link, type: string }
+              - name: image
+                label: Image
+                type: object
+                fields:
+                  - { name: src, label: Image, type: image }
+                  - { name: alt, label: Alt text, type: string }
+          - name: mini
+            label: Upcoming venture tiles
+            type: object
+            list: true
+            fields:
+              - { name: pill, label: Status pill, type: string }
+              - { name: title, label: Title, type: string }
+              - { name: body, label: Body, type: text }
+              - name: image
+                label: Image
+                type: object
+                fields:
+                  - { name: src, label: Image, type: image }
+                  - { name: alt, label: Alt text, type: string }
+
+      - name: about
+        label: About section
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - name: heading
+            label: "Heading (accent word renders italic + rust)"
+            type: object
+            fields:
+              - { name: pre, label: Before accent, type: string }
+              - { name: accent, label: Accent word, type: string }
+              - { name: post, label: After accent, type: string }
+          - name: paragraphs
+            label: Paragraphs
+            type: text
+            list: true
+          - name: founders
+            label: Founders
+            type: object
+            list: true
+            fields:
+              - { name: name, label: Name, type: string }
+              - { name: role, label: Role, type: string }
+          - name: image
+            label: About image
+            type: object
+            fields:
+              - { name: src, label: Image, type: image }
+              - { name: alt, label: Alt text, type: string }
+
+      - name: cta
+        label: Call to action
+        type: object
+        fields:
+          - { name: eyebrow, label: Eyebrow, type: string }
+          - name: heading
+            label: "Heading (accent word renders italic + rust)"
+            type: object
+            fields:
+              - { name: pre, label: Before accent, type: string }
+              - { name: accent, label: Accent word, type: string }
+              - { name: post, label: After accent, type: string }
+          - { name: body, label: Body, type: text }
+          - { name: email, label: Contact email, type: string }

@@ -1,27 +1,49 @@
+{#- ── Font catalog: maps CMS font keys to a CSS stack + Google Fonts param ── -#}
+{%- set headingFonts = {
+  "dm-serif":     { "stack": "'DM Serif Display', Georgia, serif",   "param": "DM+Serif+Display:ital@0;1" },
+  "playfair":     { "stack": "'Playfair Display', Georgia, serif",   "param": "Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600" },
+  "fraunces":     { "stack": "'Fraunces', Georgia, serif",           "param": "Fraunces:ital,wght@0,400;0,600;1,400;1,600" },
+  "cormorant":    { "stack": "'Cormorant Garamond', Georgia, serif", "param": "Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600" },
+  "lora":         { "stack": "'Lora', Georgia, serif",               "param": "Lora:ital,wght@0,500;0,600;1,500;1,600" },
+  "libre-caslon": { "stack": "'Libre Caslon Display', Georgia, serif", "param": "Libre+Caslon+Display" }
+} -%}
+{%- set bodyFonts = {
+  "inter":        { "stack": "'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif", "param": "Inter:wght@400;500;600;700" },
+  "work-sans":    { "stack": "'Work Sans', system-ui, sans-serif",      "param": "Work+Sans:wght@400;500;600;700" },
+  "dm-sans":      { "stack": "'DM Sans', system-ui, sans-serif",        "param": "DM+Sans:wght@400;500;600;700" },
+  "plus-jakarta": { "stack": "'Plus Jakarta Sans', system-ui, sans-serif", "param": "Plus+Jakarta+Sans:wght@400;500;600;700" },
+  "nunito-sans":  { "stack": "'Nunito Sans', system-ui, sans-serif",    "param": "Nunito+Sans:wght@400;500;600;700" },
+  "source-sans":  { "stack": "'Source Sans 3', system-ui, sans-serif",  "param": "Source+Sans+3:wght@400;500;600;700" },
+  "figtree":      { "stack": "'Figtree', system-ui, sans-serif",        "param": "Figtree:wght@400;500;600;700" }
+} -%}
+{%- set hf = headingFonts[theme.headingFont] or headingFonts["dm-serif"] -%}
+{%- set bf = bodyFonts[theme.bodyFont] or bodyFonts["inter"] -%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VC Innovations Group — Software Studio</title>
-  <meta name="description" content="VC Innovations Group is an independent software studio building human-centered products — starting with Wander, the travel discovery app." />
-  <meta property="og:title" content="VC Innovations Group" />
-  <meta property="og:description" content="An independent software studio building human-centered products — starting with Wander." />
+  <title>{{ site.metaTitle }}</title>
+  <meta name="description" content="{{ site.metaDescription }}" />
+  <meta property="og:title" content="{{ site.brandName }}" />
+  <meta property="og:description" content="{{ site.metaDescription }}" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://vcinnovationsgroup.com/" />
+  <meta property="og:url" content="{{ site.url }}" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family={{ hf.param }}&family={{ bf.param }}&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      /* ── Wander palette ─────────────────────────────── */
-      --cream:      #F0EBE0;
-      --card:       #FDFAF6;
-      --navy:       #1C3649;
-      --navy-light: #2A4D65;
-      --rust:       #B85C38;
+      /* ── Brand palette (CMS-editable) ─────────────── */
+      --cream:      {{ theme.colors.cream }};
+      --card:       {{ theme.colors.card }};
+      --navy:       {{ theme.colors.navy }};
+      --navy-light: {{ theme.colors.navyLight }};
+      --rust:       {{ theme.colors.rust }};
+
+      /* ── Warm-gray neutrals (fixed) ───────────────── */
       --wg100: #F0EBE2;
       --wg200: #E4DDD3;
       --wg300: #D4CCC2;
@@ -29,10 +51,11 @@
       --wg500: #9E9690;
       --wg600: #5C5449;
 
-      --serif: 'DM Serif Display', Georgia, serif;
-      --sans:  'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      /* ── Fonts (CMS-editable) ─────────────────────── */
+      --serif: {{ hf.stack | safe }};
+      --sans:  {{ bf.stack | safe }};
 
-      --max: 1080px;
+      --max: {{ theme.maxWidth }}px;
       --radius-lg: 24px;
       --radius-md: 16px;
       --shadow-sm: 0 2px 8px rgba(28,54,73,0.07);
@@ -182,7 +205,6 @@
     .about h2 { font-size: clamp(30px, 4vw, 46px); line-height: 1.12; margin: 16px 0 20px; }
     .about p { color: var(--wg600); margin-bottom: 16px; }
     .founders { display: flex; gap: 28px; margin-top: 28px; flex-wrap: wrap; }
-    .founder { }
     .founder .fn { font-family: var(--serif); font-size: 20px; color: var(--navy); }
     .founder .fr { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--rust); }
 
@@ -226,7 +248,6 @@
     }
     @media (max-width: 520px) {
       .wrap { padding: 0 18px; }
-      .nav-cta .btn span.full { display: none; }
       .hero-badge { left: 0; }
     }
     @media (prefers-reduced-motion: reduce) {
@@ -236,194 +257,7 @@
   </style>
 </head>
 <body>
-
-  <!-- ── Header ─────────────────────────────── -->
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="#top">
-        <span class="mark">VC</span>
-        <span class="name">VC Innovations Group</span>
-      </a>
-      <nav class="nav-links">
-        <a href="#approach">Approach</a>
-        <a href="#ventures">Ventures</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <div class="nav-cta">
-        <a class="btn btn-primary" href="#contact">Get in <span class="full">touch</span></a>
-      </div>
-    </div>
-  </header>
-
-  <!-- ── Hero ─────────────────────────────── -->
-  <a id="top"></a>
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="reveal">
-        <span class="eyebrow">Independent Software Studio</span>
-        <h1>We build products people <span class="italic">love</span> to use.</h1>
-        <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. VC Innovations Group is an independent studio designing and shipping human-centered software — starting with Wander, and the ideas that follow.</p>
-        <div class="cta">
-          <a class="btn btn-primary" href="#ventures">See our work</a>
-          <a class="btn btn-ghost" href="#about">Our story</a>
-        </div>
-      </div>
-      <div class="hero-media reveal">
-        <img src="https://images.pexels.com/photos/33992262/pexels-photo-33992262.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1100&h=1200" alt="Dramatic coastal cliffs meeting the sea" loading="eager" />
-        <div class="hero-badge">
-          <span class="dot"></span>
-          <div>
-            <div class="t">Wander</div>
-            <div class="s">Now in development</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Approach ─────────────────────────────── -->
-  <section class="block" id="approach">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">What we do</span>
-        <h2>A studio model built around <span class="italic">craft</span>.</h2>
-        <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. We take ideas from first sketch to shipped product.</p>
-      </div>
-      <div class="cards">
-        <div class="card reveal">
-          <div class="num">01</div>
-          <h3>Product Studio</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
-        </div>
-        <div class="card reveal">
-          <div class="num">02</div>
-          <h3>Venture Building</h3>
-          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
-        </div>
-        <div class="card reveal">
-          <div class="num">03</div>
-          <h3>Engineering</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Ventures ─────────────────────────────── -->
-  <section class="block" id="ventures" style="background: var(--card); border-top: 1px solid var(--wg200); border-bottom: 1px solid var(--wg200);">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="eyebrow">Our ventures</span>
-        <h2>One product live. <span class="italic">More</span> in the works.</h2>
-        <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Each venture starts as a question worth answering.</p>
-      </div>
-
-      <!-- Featured: Wander -->
-      <div class="feature reveal">
-        <div class="media">
-          <img src="https://images.pexels.com/photos/33851769/pexels-photo-33851769.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1000&h=900" alt="Whitewashed village with blue domes overlooking the sea" loading="lazy" />
-        </div>
-        <div class="body">
-          <span class="pill"><span class="dot"></span>In development</span>
-          <h3>Wander</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-          <a class="arrow-link" href="#contact">Learn more &rarr;</a>
-        </div>
-      </div>
-
-      <!-- Upcoming -->
-      <div class="mini-grid">
-        <div class="mini reveal">
-          <img src="https://images.pexels.com/photos/969462/pexels-photo-969462.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=800&h=600" alt="Person holding a smartphone" loading="lazy" />
-          <div class="overlay">
-            <span class="pill"><span class="dot"></span>Coming soon</span>
-            <h3>Venture II</h3>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
-          </div>
-        </div>
-        <div class="mini reveal">
-          <img src="https://images.pexels.com/photos/28378494/pexels-photo-28378494.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=800&h=600" alt="Open road winding through mountains" loading="lazy" />
-          <div class="overlay">
-            <span class="pill"><span class="dot"></span>On the roadmap</span>
-            <h3>Venture III</h3>
-            <p>Adipiscing elit sed do eiusmod tempor.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── About ─────────────────────────────── -->
-  <section class="block" id="about">
-    <div class="wrap about">
-      <div class="about-media reveal">
-        <img src="https://images.pexels.com/photos/5325045/pexels-photo-5325045.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1000&h=1000" alt="Two people collaborating over a laptop in a bright workspace" loading="lazy" />
-      </div>
-      <div class="reveal">
-        <span class="eyebrow">Who we are</span>
-        <h2>Two builders, one <span class="italic">workshop</span>.</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-        <div class="founders">
-          <div class="founder">
-            <div class="fn">Chris</div>
-            <div class="fr">Co-founder</div>
-          </div>
-          <div class="founder">
-            <div class="fn">Vinny</div>
-            <div class="fr">Co-founder</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── CTA ─────────────────────────────── -->
-  <section class="block" id="contact" style="padding-top: 0;">
-    <div class="wrap">
-      <div class="cta-band reveal">
-        <span class="eyebrow">Get in touch</span>
-        <h2>Let's build something <span class="italic">worth using</span>.</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Have an idea, a question, or just want to say hello? We'd love to hear from you.</p>
-        <a class="btn btn-primary" href="mailto:hello@vcinnovationsgroup.com">hello@vcinnovationsgroup.com</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Footer ─────────────────────────────── -->
-  <footer>
-    <div class="wrap">
-      <div class="foot-grid">
-        <a class="brand" href="#top">
-          <span class="mark">VC</span>
-          <span class="name">VC Innovations Group</span>
-        </a>
-        <div class="foot-links">
-          <div class="foot-col">
-            <h4>Studio</h4>
-            <a href="#approach">Approach</a>
-            <a href="#ventures">Ventures</a>
-            <a href="#about">About</a>
-          </div>
-          <div class="foot-col">
-            <h4>Ventures</h4>
-            <a href="#ventures">Wander</a>
-            <span>More soon</span>
-          </div>
-          <div class="foot-col">
-            <h4>Contact</h4>
-            <a href="mailto:hello@vcinnovationsgroup.com">hello@vcinnovationsgroup.com</a>
-            <span>Boston, MA</span>
-          </div>
-        </div>
-      </div>
-      <div class="foot-bottom">
-        <span>© <span id="year"></span> VC Innovations Group. All rights reserved.</span>
-        <span>Photography via <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a> · placeholder copy</span>
-      </div>
-    </div>
-  </footer>
+{{ content | safe }}
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();

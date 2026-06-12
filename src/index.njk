@@ -1,0 +1,170 @@
+---
+layout: base.njk
+---
+  <!-- ── Header ─────────────────────────────── -->
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <span class="mark">{{ site.monogram }}</span>
+        <span class="name">{{ site.brandName }}</span>
+      </a>
+      <nav class="nav-links">
+        {%- for link in site.nav %}
+        <a href="{{ link.href }}">{{ link.label }}</a>
+        {%- endfor %}
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="#contact">{{ site.navCtaLabel }}</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Hero ─────────────────────────────── -->
+  <a id="top"></a>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">{{ copy.hero.eyebrow }}</span>
+        <h1>{{ copy.hero.title.pre }}<span class="italic">{{ copy.hero.title.accent }}</span>{{ copy.hero.title.post }}</h1>
+        <p class="lede">{{ copy.hero.lede }}</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="{{ copy.hero.primaryBtn.href }}">{{ copy.hero.primaryBtn.label }}</a>
+          <a class="btn btn-ghost" href="{{ copy.hero.ghostBtn.href }}">{{ copy.hero.ghostBtn.label }}</a>
+        </div>
+      </div>
+      <div class="hero-media reveal">
+        <img src="{{ copy.hero.image.src }}" alt="{{ copy.hero.image.alt }}" loading="eager" />
+        <div class="hero-badge">
+          <span class="dot"></span>
+          <div>
+            <div class="t">{{ copy.hero.badge.title }}</div>
+            <div class="s">{{ copy.hero.badge.subtitle }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Approach ─────────────────────────────── -->
+  <section class="block" id="approach">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">{{ copy.approach.eyebrow }}</span>
+        <h2>{{ copy.approach.heading.pre }}<span class="italic">{{ copy.approach.heading.accent }}</span>{{ copy.approach.heading.post }}</h2>
+        <p class="lede">{{ copy.approach.lede }}</p>
+      </div>
+      <div class="cards">
+        {%- for card in copy.approach.cards %}
+        <div class="card reveal">
+          <div class="num">{{ card.num }}</div>
+          <h3>{{ card.title }}</h3>
+          <p>{{ card.body }}</p>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Ventures ─────────────────────────────── -->
+  <section class="block" id="ventures" style="background: var(--card); border-top: 1px solid var(--wg200); border-bottom: 1px solid var(--wg200);">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">{{ copy.ventures.eyebrow }}</span>
+        <h2>{{ copy.ventures.heading.pre }}<span class="italic">{{ copy.ventures.heading.accent }}</span>{{ copy.ventures.heading.post }}</h2>
+        <p class="lede">{{ copy.ventures.lede }}</p>
+      </div>
+
+      <!-- Featured -->
+      <div class="feature reveal">
+        <div class="media">
+          <img src="{{ copy.ventures.featured.image.src }}" alt="{{ copy.ventures.featured.image.alt }}" loading="lazy" />
+        </div>
+        <div class="body">
+          <span class="pill"><span class="dot"></span>{{ copy.ventures.featured.pill }}</span>
+          <h3>{{ copy.ventures.featured.title }}</h3>
+          <p>{{ copy.ventures.featured.body }}</p>
+          <a class="arrow-link" href="{{ copy.ventures.featured.linkHref }}">{{ copy.ventures.featured.linkLabel }}</a>
+        </div>
+      </div>
+
+      <!-- Upcoming -->
+      <div class="mini-grid">
+        {%- for item in copy.ventures.mini %}
+        <div class="mini reveal">
+          <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" loading="lazy" />
+          <div class="overlay">
+            <span class="pill"><span class="dot"></span>{{ item.pill }}</span>
+            <h3>{{ item.title }}</h3>
+            <p>{{ item.body }}</p>
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About ─────────────────────────────── -->
+  <section class="block" id="about">
+    <div class="wrap about">
+      <div class="about-media reveal">
+        <img src="{{ copy.about.image.src }}" alt="{{ copy.about.image.alt }}" loading="lazy" />
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">{{ copy.about.eyebrow }}</span>
+        <h2>{{ copy.about.heading.pre }}<span class="italic">{{ copy.about.heading.accent }}</span>{{ copy.about.heading.post }}</h2>
+        {%- for para in copy.about.paragraphs %}
+        <p>{{ para }}</p>
+        {%- endfor %}
+        <div class="founders">
+          {%- for f in copy.about.founders %}
+          <div class="founder">
+            <div class="fn">{{ f.name }}</div>
+            <div class="fr">{{ f.role }}</div>
+          </div>
+          {%- endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ─────────────────────────────── -->
+  <section class="block" id="contact" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <span class="eyebrow">{{ copy.cta.eyebrow }}</span>
+        <h2>{{ copy.cta.heading.pre }}<span class="italic">{{ copy.cta.heading.accent }}</span>{{ copy.cta.heading.post }}</h2>
+        <p>{{ copy.cta.body }}</p>
+        <a class="btn btn-primary" href="mailto:{{ copy.cta.email }}">{{ copy.cta.email }}</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────── -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <a class="brand" href="#top">
+          <span class="mark">{{ site.monogram }}</span>
+          <span class="name">{{ site.brandName }}</span>
+        </a>
+        <div class="foot-links">
+          {%- for col in site.footerCols %}
+          <div class="foot-col">
+            <h4>{{ col.heading }}</h4>
+            {%- for link in col.links %}
+            {%- if link.href %}
+            <a href="{{ link.href }}">{{ link.label }}</a>
+            {%- else %}
+            <span>{{ link.label }}</span>
+            {%- endif %}
+            {%- endfor %}
+          </div>
+          {%- endfor %}
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span id="year"></span> {{ site.brandName }}. All rights reserved.</span>
+        <span>Photography via <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a> · placeholder copy</span>
+      </div>
+    </div>
+  </footer>

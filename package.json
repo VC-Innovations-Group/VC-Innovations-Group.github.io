@@ -1,0 +1,13 @@
+{
+  "name": "vc-innovations-group-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Marketing site for VC Innovations Group (vcinnovationsgroup.com), built with Eleventy and edited via Pages CMS.",
+  "scripts": {
+    "build": "eleventy",
+    "dev": "eleventy --serve --port 4321"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}

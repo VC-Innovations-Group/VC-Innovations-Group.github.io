@@ -1,0 +1,40 @@
+{
+  "brandName": "VC Innovations Group",
+  "monogram": "VC",
+  "metaTitle": "VC Innovations Group — Software Studio",
+  "metaDescription": "VC Innovations Group is an independent software studio building human-centered products — starting with Wander, the travel discovery app.",
+  "url": "https://vcinnovationsgroup.com/",
+  "contactEmail": "hello@vcinnovationsgroup.com",
+  "location": "Boston, MA",
+  "navCtaLabel": "Get in touch",
+  "nav": [
+    { "label": "Approach", "href": "#approach" },
+    { "label": "Ventures", "href": "#ventures" },
+    { "label": "About", "href": "#about" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "footerCols": [
+    {
+      "heading": "Studio",
+      "links": [
+        { "label": "Approach", "href": "#approach" },
+        { "label": "Ventures", "href": "#ventures" },
+        { "label": "About", "href": "#about" }
+      ]
+    },
+    {
+      "heading": "Ventures",
+      "links": [
+        { "label": "Wander", "href": "#ventures" },
+        { "label": "More soon", "href": "" }
+      ]
+    },
+    {
+      "heading": "Contact",
+      "links": [
+        { "label": "hello@vcinnovationsgroup.com", "href": "mailto:hello@vcinnovationsgroup.com" },
+        { "label": "Boston, MA", "href": "" }
+      ]
+    }
+  ]
+}
