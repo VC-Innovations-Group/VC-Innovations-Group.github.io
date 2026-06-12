@@ -8,32 +8,63 @@
   "location": "Boston, MA",
   "navCtaLabel": "Get in touch",
   "nav": [
-    { "label": "Approach", "href": "#approach" },
-    { "label": "Ventures", "href": "#ventures" },
-    { "label": "About", "href": "#about" },
-    { "label": "Contact", "href": "#contact" }
+    {
+      "label": "Approach",
+      "href": "#approach"
+    },
+    {
+      "label": "Ventures",
+      "href": "#ventures"
+    },
+    {
+      "label": "About",
+      "href": "#about"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
   ],
   "footerCols": [
     {
       "heading": "Studio",
       "links": [
-        { "label": "Approach", "href": "#approach" },
-        { "label": "Ventures", "href": "#ventures" },
-        { "label": "About", "href": "#about" }
+        {
+          "label": "Approach",
+          "href": "#approach"
+        },
+        {
+          "label": "Ventures",
+          "href": "#ventures"
+        },
+        {
+          "label": "About",
+          "href": "#about"
+        }
       ]
     },
     {
       "heading": "Ventures",
       "links": [
-        { "label": "Wander", "href": "#ventures" },
-        { "label": "More soon", "href": "" }
+        {
+          "label": "Wander",
+          "href": "#ventures"
+        },
+        {
+          "label": "More soon"
+        }
       ]
     },
     {
       "heading": "Contact",
       "links": [
-        { "label": "hello@vcinnovationsgroup.com", "href": "mailto:hello@vcinnovationsgroup.com" },
-        { "label": "Boston, MA", "href": "" }
+        {
+          "label": "ccupero@vcinnovationsgroup.com",
+          "href": "mailto:ccupero@vcinnovationsgroup.com"
+        },
+        {
+          "label": "San Antonio, TX"
+        }
       ]
     }
   ]
