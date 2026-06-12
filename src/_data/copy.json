@@ -31,22 +31,22 @@
       "accent": "craft",
       "post": "."
     },
-    "lede": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. We take ideas from first sketch to shipped product.",
+    "lede": "VC Innovations Group develops and invests in innovative technology solutions that help businesses and consumers achieve more. We identify market opportunities, design scalable digital products, and bring them to life through software development, artificial intelligence, data-driven insights, and strategic partnerships. From concept and validation to launch and growth, we focus on creating practical solutions that solve real-world challenges and deliver measurable value.",
     "cards": [
       {
         "num": "01",
-        "title": "Product Studio",
-        "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip."
+        "title": "Innovation & Strategy",
+        "body": "We identify emerging market opportunities and transform ideas into actionable business concepts. By combining industry expertise, technology trends, and customer insights, we help shape the next generation of digital solutions."
       },
       {
         "num": "02",
-        "title": "Venture Building",
-        "body": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat."
+        "title": "Product Development",
+        "body": "We design, develop, and launch scalable software platforms, mobile applications, and AI-powered solutions. Our focus is on creating intuitive products that solve real-world challenges and deliver meaningful value."
       },
       {
         "num": "03",
-        "title": "Engineering",
-        "body": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa."
+        "title": "Growth & Partnerships",
+        "body": "We transform successful concepts into sustainable businesses through continuous innovation, product enhancement, and market expansion. Our goal is to build technology solutions that can grow, adapt, and create long-term value for customers and stakeholders."
       }
     ]
   },
