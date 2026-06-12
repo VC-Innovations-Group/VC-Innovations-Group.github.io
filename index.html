@@ -3,140 +3,451 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>VC Innovations Group</title>
-  <meta name="description" content="VC Innovations Group — building the next generation of digital products and ventures." />
+  <title>VC Innovations Group — Software Studio</title>
+  <meta name="description" content="VC Innovations Group is an independent software studio building human-centered products — starting with Wander, the travel discovery app." />
+  <meta property="og:title" content="VC Innovations Group" />
+  <meta property="og:description" content="An independent software studio building human-centered products — starting with Wander." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://vcinnovationsgroup.com/" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
   <style>
     :root {
-      --bg: #0b1120;
-      --bg-soft: #111a2e;
-      --fg: #e8edf6;
-      --muted: #9aa7bd;
-      --accent: #4f8cff;
-      --accent-2: #38e1c4;
-      --border: rgba(255, 255, 255, 0.08);
-      --max: 1080px;
+      /* ── Wander palette ─────────────────────────────── */
+      --cream:      #F0EBE0;
+      --card:       #FDFAF6;
+      --navy:       #1C3649;
+      --navy-light: #2A4D65;
+      --rust:       #B85C38;
+      --wg100: #F0EBE2;
+      --wg200: #E4DDD3;
+      --wg300: #D4CCC2;
+      --wg400: #B8B0A6;
+      --wg500: #9E9690;
+      --wg600: #5C5449;
+
+      --serif: 'DM Serif Display', Georgia, serif;
+      --mono:  'JetBrains Mono', ui-monospace, monospace;
+
+      --max: 1140px;
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --shadow-sm: 0 2px 8px rgba(28,54,73,0.07);
+      --shadow-md: 0 12px 32px rgba(28,54,73,0.12);
+      --shadow-lg: 0 24px 60px rgba(28,54,73,0.16);
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
     body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      background: radial-gradient(1200px 600px at 80% -10%, rgba(79,140,255,0.18), transparent 60%),
-                  radial-gradient(900px 500px at 0% 10%, rgba(56,225,196,0.12), transparent 55%),
-                  var(--bg);
-      color: var(--fg);
-      line-height: 1.6;
+      font-family: var(--mono);
+      background: var(--cream);
+      color: var(--navy);
+      line-height: 1.65;
+      font-size: 15px;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
-    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
 
-    header {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 28px 0;
-    }
-    .brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: -0.02em; }
-    .brand .mark {
-      width: 34px; height: 34px; border-radius: 9px;
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      display: grid; place-items: center; font-size: 16px; color: #05101f;
-    }
-    nav a { color: var(--muted); text-decoration: none; margin-left: 28px; font-weight: 500; font-size: 15px; }
-    nav a:hover { color: var(--fg); }
+    .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
-    .hero { padding: 96px 0 72px; }
+    /* ── Shared type ─────────────────────────────── */
     .eyebrow {
-      display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--accent-2); margin-bottom: 20px;
+      font-family: var(--mono); font-weight: 500;
+      font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--rust);
     }
-    h1 {
-      font-size: clamp(38px, 6vw, 68px); line-height: 1.05; letter-spacing: -0.03em;
-      font-weight: 800; max-width: 16ch;
-    }
-    h1 .grad {
-      background: linear-gradient(120deg, var(--accent), var(--accent-2));
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
-    .lede { margin-top: 24px; font-size: clamp(17px, 2vw, 20px); color: var(--muted); max-width: 56ch; }
-    .cta { margin-top: 36px; display: flex; gap: 14px; flex-wrap: wrap; }
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; color: var(--navy); letter-spacing: 0.01em; }
+    .italic { font-style: italic; color: var(--rust); }
+    .lede { color: var(--wg600); font-size: clamp(15px, 1.4vw, 17px); max-width: 54ch; }
+
     .btn {
-      display: inline-flex; align-items: center; gap: 8px; padding: 13px 22px;
-      border-radius: 11px; font-weight: 600; font-size: 15px; text-decoration: none; cursor: pointer;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
+      display: inline-flex; align-items: center; gap: 9px;
+      font-family: var(--mono); font-weight: 500; font-size: 12px;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      padding: 14px 26px; border-radius: 999px; cursor: pointer;
+      border: 1px solid transparent; transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
     }
-    .btn-primary { background: linear-gradient(120deg, var(--accent), var(--accent-2)); color: #05101f; }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(79,140,255,0.35); }
-    .btn-ghost { border: 1px solid var(--border); color: var(--fg); }
-    .btn-ghost:hover { border-color: var(--accent); }
+    .btn-primary { background: var(--rust); color: var(--cream); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(184,92,56,0.35); }
+    .btn-ghost { background: transparent; color: var(--navy); border-color: var(--wg300); }
+    .btn-ghost:hover { border-color: var(--navy); transform: translateY(-2px); }
 
-    .grid {
-      margin: 40px 0 100px; display: grid; gap: 20px;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    /* ── Header ─────────────────────────────── */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(240,235,224,0.82);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--wg200);
     }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand .mark {
+      width: 38px; height: 38px; border-radius: 11px; background: var(--navy);
+      display: grid; place-items: center; flex-shrink: 0;
+      font-family: var(--serif); font-style: italic; color: var(--cream); font-size: 17px;
+    }
+    .brand .name { font-family: var(--serif); font-size: 19px; color: var(--navy); white-space: nowrap; }
+    .nav-links { display: flex; align-items: center; gap: 34px; }
+    .nav-links a {
+      font-family: var(--mono); font-size: 12px; letter-spacing: 0.6px; color: var(--wg600);
+      transition: color .15s ease;
+    }
+    .nav-links a:hover { color: var(--rust); }
+    .nav-cta { display: flex; align-items: center; gap: 18px; }
+    .nav-cta .btn { padding: 10px 20px; }
+
+    /* ── Hero ─────────────────────────────── */
+    .hero { padding: clamp(56px, 8vw, 104px) 0 clamp(48px, 6vw, 88px); }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+    .hero h1 { font-size: clamp(40px, 6vw, 68px); line-height: 1.06; margin: 22px 0 24px; }
+    .hero .lede { font-size: clamp(15px, 1.5vw, 18px); }
+    .hero .cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
+    .hero-media { position: relative; }
+    .hero-media img {
+      width: 100%; height: clamp(360px, 46vw, 540px); object-fit: cover;
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+    }
+    .hero-badge {
+      position: absolute; left: -18px; bottom: 28px;
+      background: var(--card); border: 1px solid var(--wg200);
+      border-radius: var(--radius-md); padding: 16px 20px; box-shadow: var(--shadow-md);
+      display: flex; align-items: center; gap: 14px; max-width: 250px;
+    }
+    .hero-badge .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--rust); flex-shrink: 0;
+      box-shadow: 0 0 0 4px rgba(184,92,56,0.15); }
+    .hero-badge .t { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--navy); line-height: 1.2; }
+    .hero-badge .s { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--wg500); }
+
+    /* ── Marquee strip ─────────────────────────────── */
+    .strip { border-top: 1px solid var(--wg200); border-bottom: 1px solid var(--wg200); background: var(--card); }
+    .strip-inner { display: flex; flex-wrap: wrap; gap: 18px 48px; padding: 22px 0; align-items: center; justify-content: space-between; }
+    .strip-inner span { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--wg500); }
+    .strip-inner b { color: var(--navy); font-weight: 500; }
+
+    /* ── Section scaffold ─────────────────────────────── */
+    section.block { padding: clamp(64px, 9vw, 120px) 0; }
+    .sec-head { max-width: 640px; margin-bottom: clamp(40px, 5vw, 64px); }
+    .sec-head h2 { font-size: clamp(30px, 4vw, 46px); line-height: 1.12; margin-top: 16px; }
+    .sec-head p { margin-top: 18px; }
+
+    /* ── Approach cards ─────────────────────────────── */
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
     .card {
-      background: var(--bg-soft); border: 1px solid var(--border); border-radius: 16px; padding: 28px;
+      background: var(--card); border: 1px solid var(--wg200); border-radius: var(--radius-md);
+      padding: 32px 28px; transition: transform .2s ease, box-shadow .2s ease;
     }
-    .card h3 { font-size: 18px; margin-bottom: 8px; letter-spacing: -0.01em; }
-    .card p { color: var(--muted); font-size: 15px; }
-    .card .ico { font-size: 24px; margin-bottom: 14px; }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .card .num { font-family: var(--serif); font-style: italic; font-size: 30px; color: var(--rust); }
+    .card h3 { font-size: 22px; margin: 14px 0 10px; }
+    .card p { color: var(--wg600); font-size: 14px; }
 
-    footer {
-      border-top: 1px solid var(--border); padding: 32px 0; color: var(--muted); font-size: 14px;
-      display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    /* ── Ventures ─────────────────────────────── */
+    .feature {
+      display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 4vw, 56px); align-items: center;
+      background: var(--card); border: 1px solid var(--wg200); border-radius: var(--radius-lg);
+      overflow: hidden;
     }
-    footer a { color: var(--muted); text-decoration: none; }
-    footer a:hover { color: var(--fg); }
+    .feature .media { height: 100%; min-height: 340px; }
+    .feature .media img { width: 100%; height: 100%; object-fit: cover; min-height: 340px; }
+    .feature .body { padding: clamp(32px, 4vw, 52px) clamp(28px, 4vw, 52px) clamp(32px, 4vw, 52px) 0; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--navy);
+      background: var(--wg100); border: 1px solid var(--wg200); border-radius: 999px; padding: 6px 12px;
+    }
+    .pill .dot { width: 7px; height: 7px; border-radius: 50%; background: #4A7C59; }
+    .feature h3 { font-size: clamp(30px, 4vw, 44px); margin: 18px 0 14px; }
+    .feature p { color: var(--wg600); margin-bottom: 22px; }
+    .arrow-link { font-family: var(--mono); font-size: 12px; letter-spacing: 1px; text-transform: uppercase; color: var(--rust); font-weight: 500; }
+    .arrow-link:hover { text-decoration: underline; }
+
+    .mini-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 22px; }
+    .mini {
+      position: relative; border-radius: var(--radius-md); overflow: hidden; min-height: 220px;
+      border: 1px solid var(--wg200);
+    }
+    .mini img { width: 100%; height: 100%; min-height: 220px; object-fit: cover; filter: saturate(0.9); }
+    .mini .overlay {
+      position: absolute; inset: 0; background: linear-gradient(180deg, rgba(28,54,73,0) 30%, rgba(28,54,73,0.82) 100%);
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 24px;
+    }
+    .mini .overlay .pill { color: var(--cream); background: rgba(253,250,246,0.12); border-color: rgba(253,250,246,0.25); }
+    .mini .overlay .pill .dot { background: var(--wg300); }
+    .mini .overlay h3 { color: var(--cream); font-size: 26px; margin-top: 12px; }
+    .mini .overlay p { color: rgba(240,235,224,0.82); font-size: 13px; margin-top: 4px; }
+
+    /* ── About ─────────────────────────────── */
+    .about { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(32px, 5vw, 72px); align-items: center; }
+    .about-media img { width: 100%; height: clamp(340px, 42vw, 500px); object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-md); }
+    .about h2 { font-size: clamp(30px, 4vw, 46px); line-height: 1.12; margin: 16px 0 20px; }
+    .about p { color: var(--wg600); margin-bottom: 16px; }
+    .founders { display: flex; gap: 28px; margin-top: 28px; flex-wrap: wrap; }
+    .founder { }
+    .founder .fn { font-family: var(--serif); font-size: 20px; color: var(--navy); }
+    .founder .fr { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--rust); }
+
+    /* ── CTA band ─────────────────────────────── */
+    .cta-band { background: var(--navy); border-radius: var(--radius-lg); padding: clamp(48px, 7vw, 84px) clamp(28px, 5vw, 72px); text-align: center; }
+    .cta-band .eyebrow { color: #D9A38C; }
+    .cta-band h2 { color: var(--cream); font-size: clamp(30px, 4.5vw, 52px); line-height: 1.1; margin: 16px auto 14px; max-width: 16ch; }
+    .cta-band .italic { color: #E0916B; }
+    .cta-band p { color: rgba(240,235,224,0.7); max-width: 48ch; margin: 0 auto 32px; }
+
+    /* ── Footer ─────────────────────────────── */
+    footer { border-top: 1px solid var(--wg200); padding: 56px 0 40px; }
+    .foot-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 28px; align-items: flex-start; }
+    .foot-links { display: flex; gap: 40px; flex-wrap: wrap; }
+    .foot-col h4 { font-family: var(--mono); font-weight: 500; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--wg500); margin-bottom: 14px; }
+    .foot-col a, .foot-col span { display: block; font-size: 13px; color: var(--wg600); margin-bottom: 9px; }
+    .foot-col a:hover { color: var(--rust); }
+    .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--wg200); }
+    .foot-bottom span { font-size: 11px; color: var(--wg500); letter-spacing: 0.5px; }
+    .foot-bottom a { color: var(--wg500); }
+    .foot-bottom a:hover { color: var(--rust); }
+
+    /* ── Reveal animation ─────────────────────────────── */
+    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.in { opacity: 1; transform: none; }
+
+    /* ── Responsive ─────────────────────────────── */
+    @media (max-width: 920px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-media { order: -1; }
+      .hero-media img { height: clamp(280px, 60vw, 420px); }
+      .feature, .about { grid-template-columns: 1fr; }
+      .feature .body { padding: 0 clamp(24px, 6vw, 40px) clamp(32px, 6vw, 44px); }
+      .feature .media img { min-height: 300px; height: 320px; }
+      .about-media { order: -1; }
+    }
+    @media (max-width: 760px) {
+      .nav-links { display: none; }
+      .cards { grid-template-columns: 1fr; }
+      .mini-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 520px) {
+      .wrap { padding: 0 18px; }
+      .nav-cta .btn span.full { display: none; }
+      .hero-badge { left: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+      html { scroll-behavior: auto; }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
-    <header>
-      <div class="brand"><span class="mark">VC</span> VC Innovations Group</div>
-      <nav>
-        <a href="#what">What we do</a>
+
+  <!-- ── Header ─────────────────────────────── -->
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#top">
+        <span class="mark">VC</span>
+        <span class="name">VC Innovations Group</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#approach">Approach</a>
         <a href="#ventures">Ventures</a>
+        <a href="#about">About</a>
         <a href="#contact">Contact</a>
       </nav>
-    </header>
+      <div class="nav-cta">
+        <a class="btn btn-primary" href="#contact">Get in <span class="full">touch</span></a>
+      </div>
+    </div>
+  </header>
 
-    <section class="hero">
-      <span class="eyebrow">Innovation · Ventures · Technology</span>
-      <h1>Building the next generation of <span class="grad">digital products</span>.</h1>
-      <p class="lede">
-        VC Innovations Group is the parent company behind a portfolio of technology
-        ventures — turning bold ideas into products people love to use.
-      </p>
-      <div class="cta">
-        <a class="btn btn-primary" href="#contact">Get in touch →</a>
-        <a class="btn btn-ghost" href="#ventures">Our ventures</a>
+  <!-- ── Hero ─────────────────────────────── -->
+  <a id="top"></a>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">Independent Software Studio</span>
+        <h1>We build products people <span class="italic">love</span> to use.</h1>
+        <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. VC Innovations Group is an independent studio designing and shipping human-centered software — starting with Wander, and the ideas that follow.</p>
+        <div class="cta">
+          <a class="btn btn-primary" href="#ventures">See our work</a>
+          <a class="btn btn-ghost" href="#about">Our story</a>
+        </div>
       </div>
-    </section>
+      <div class="hero-media reveal">
+        <img src="https://images.pexels.com/photos/33992262/pexels-photo-33992262.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1100&h=1200" alt="Dramatic coastal cliffs meeting the sea" loading="eager" />
+        <div class="hero-badge">
+          <span class="dot"></span>
+          <div>
+            <div class="t">Wander</div>
+            <div class="s">Now in development</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="grid" id="what">
-      <div class="card">
-        <div class="ico">🚀</div>
-        <h3>Product Studio</h3>
-        <p>We design, build, and launch software products from concept to market.</p>
-      </div>
-      <div class="card">
-        <div class="ico">🧭</div>
-        <h3>Venture Building</h3>
-        <p>Incubating new companies and backing founders with the tools to scale.</p>
-      </div>
-      <div class="card">
-        <div class="ico">⚙️</div>
-        <h3>Technology</h3>
-        <p>Modern, AI-native engineering at the core of everything we ship.</p>
-      </div>
-    </section>
-
-    <footer id="contact">
-      <div>© <span id="year"></span> VC Innovations Group. All rights reserved.</div>
-      <div><a href="mailto:hello@vcinnovationsgroup.com">hello@vcinnovationsgroup.com</a></div>
-    </footer>
+  <!-- ── Strip ─────────────────────────────── -->
+  <div class="strip">
+    <div class="wrap strip-inner">
+      <span><b>Est. 2026</b> — Boston, MA</span>
+      <span>Design <b>·</b> Engineering <b>·</b> Product</span>
+      <span><b>1</b> app live, <b>more</b> on the way</span>
+      <span>Built by <b>founders</b>, not committees</span>
+    </div>
   </div>
 
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <!-- ── Approach ─────────────────────────────── -->
+  <section class="block" id="approach">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">What we do</span>
+        <h2>A studio model built around <span class="italic">craft</span>.</h2>
+        <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. We take ideas from first sketch to shipped product.</p>
+      </div>
+      <div class="cards">
+        <div class="card reveal">
+          <div class="num">01</div>
+          <h3>Product Studio</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+        </div>
+        <div class="card reveal">
+          <div class="num">02</div>
+          <h3>Venture Building</h3>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat.</p>
+        </div>
+        <div class="card reveal">
+          <div class="num">03</div>
+          <h3>Engineering</h3>
+          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Ventures ─────────────────────────────── -->
+  <section class="block" id="ventures" style="background: var(--card); border-top: 1px solid var(--wg200); border-bottom: 1px solid var(--wg200);">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Our ventures</span>
+        <h2>One product live. <span class="italic">More</span> in the works.</h2>
+        <p class="lede">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Each venture starts as a question worth answering.</p>
+      </div>
+
+      <!-- Featured: Wander -->
+      <div class="feature reveal">
+        <div class="media">
+          <img src="https://images.pexels.com/photos/33851769/pexels-photo-33851769.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1000&h=900" alt="Whitewashed village with blue domes overlooking the sea" loading="lazy" />
+        </div>
+        <div class="body">
+          <span class="pill"><span class="dot"></span>In development</span>
+          <h3>Wander</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+          <a class="arrow-link" href="#contact">Learn more &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Upcoming -->
+      <div class="mini-grid">
+        <div class="mini reveal">
+          <img src="https://images.pexels.com/photos/969462/pexels-photo-969462.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=800&h=600" alt="Person holding a smartphone" loading="lazy" />
+          <div class="overlay">
+            <span class="pill"><span class="dot"></span>Coming soon</span>
+            <h3>Venture II</h3>
+            <p>Lorem ipsum dolor sit amet consectetur.</p>
+          </div>
+        </div>
+        <div class="mini reveal">
+          <img src="https://images.pexels.com/photos/28378494/pexels-photo-28378494.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=800&h=600" alt="Open road winding through mountains" loading="lazy" />
+          <div class="overlay">
+            <span class="pill"><span class="dot"></span>On the roadmap</span>
+            <h3>Venture III</h3>
+            <p>Adipiscing elit sed do eiusmod tempor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About ─────────────────────────────── -->
+  <section class="block" id="about">
+    <div class="wrap about">
+      <div class="about-media reveal">
+        <img src="https://images.pexels.com/photos/5325045/pexels-photo-5325045.jpeg?auto=compress&cs=tinysrgb&fit=crop&w=1000&h=1000" alt="Two people collaborating over a laptop in a bright workspace" loading="lazy" />
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Who we are</span>
+        <h2>Two builders, one <span class="italic">workshop</span>.</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+        <div class="founders">
+          <div class="founder">
+            <div class="fn">Chris</div>
+            <div class="fr">Co-founder</div>
+          </div>
+          <div class="founder">
+            <div class="fn">Vinny</div>
+            <div class="fr">Co-founder</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ─────────────────────────────── -->
+  <section class="block" id="contact" style="padding-top: 0;">
+    <div class="wrap">
+      <div class="cta-band reveal">
+        <span class="eyebrow">Get in touch</span>
+        <h2>Let's build something <span class="italic">worth using</span>.</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Have an idea, a question, or just want to say hello? We'd love to hear from you.</p>
+        <a class="btn btn-primary" href="mailto:hello@vcinnovationsgroup.com">hello@vcinnovationsgroup.com</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ─────────────────────────────── -->
+  <footer>
+    <div class="wrap">
+      <div class="foot-grid">
+        <a class="brand" href="#top">
+          <span class="mark">VC</span>
+          <span class="name">VC Innovations Group</span>
+        </a>
+        <div class="foot-links">
+          <div class="foot-col">
+            <h4>Studio</h4>
+            <a href="#approach">Approach</a>
+            <a href="#ventures">Ventures</a>
+            <a href="#about">About</a>
+          </div>
+          <div class="foot-col">
+            <h4>Ventures</h4>
+            <a href="#ventures">Wander</a>
+            <span>More soon</span>
+          </div>
+          <div class="foot-col">
+            <h4>Contact</h4>
+            <a href="mailto:hello@vcinnovationsgroup.com">hello@vcinnovationsgroup.com</a>
+            <span>Boston, MA</span>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span id="year"></span> VC Innovations Group. All rights reserved.</span>
+        <span>Photography via <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a> · placeholder copy</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Lightweight scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+  </script>
 </body>
 </html>
