@@ -1,0 +1,13 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+
+# Dependencies (if you add a build step later)
+node_modules/
+dist/
+.cache/
+
+# Env
+.env
+.env.local
