@@ -1,6 +1,5 @@
 {
   "hero": {
-    "eyebrow": "Independent Software Studio",
     "title": {
       "pre": "We build products people ",
       "accent": "love",
@@ -10,10 +9,6 @@
     "primaryBtn": {
       "label": "See our work",
       "href": "#ventures"
-    },
-    "ghostBtn": {
-      "label": "Our story",
-      "href": "#about"
     },
     "image": {
       "src": "https://images.pexels.com/photos/33992262/pexels-photo-33992262.jpeg",
