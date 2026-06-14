@@ -9,11 +9,11 @@
   "navCtaLabel": "Get in touch",
   "nav": [
     {
-      "label": "Approach",
+      "label": "Strategy",
       "href": "#approach"
     },
     {
-      "label": "Ventures",
+      "label": "Products",
       "href": "#ventures"
     },
     {
@@ -30,11 +30,11 @@
       "heading": "Studio",
       "links": [
         {
-          "label": "Approach",
+          "label": "Strategy",
           "href": "#approach"
         },
         {
-          "label": "Ventures",
+          "label": "Products",
           "href": "#ventures"
         },
         {
@@ -44,10 +44,10 @@
       ]
     },
     {
-      "heading": "Ventures",
+      "heading": "Products",
       "links": [
         {
-          "label": "Wander",
+          "label": "WhereTo",
           "href": "#ventures"
         },
         {
