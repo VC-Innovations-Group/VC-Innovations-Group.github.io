@@ -10,6 +10,10 @@
       "label": "See our work",
       "href": "#ventures"
     },
+    "ghostBtn": {
+      "label": "Contact",
+      "href": "#contact"
+    },
     "image": {
       "src": "https://images.pexels.com/photos/33992262/pexels-photo-33992262.jpeg",
       "alt": "Dramatic coastal cliffs meeting the sea"
