@@ -107,13 +107,13 @@
     }
   },
   "cta": {
-    "eyebrow": "Get in touch",
+    "eyebrow": "Let's Connect",
     "heading": {
-      "pre": "Let's build something ",
-      "accent": "worth using",
+      "pre": "Your Ideas Matter.",
+      "accent": "Help Shape What's Next",
       "post": "."
     },
-    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Have an idea, a question, or just want to say hello? We'd love to hear from you.",
+    "body": "Some of the best ideas come directly from the people who use our products. Share your feedback, suggestions, and innovative concepts as we continue building the next generation of technology solutions.",
     "email": "hello@vcinnovationsgroup.com"
   }
 }
