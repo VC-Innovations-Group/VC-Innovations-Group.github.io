@@ -20,7 +20,7 @@
       "alt": "Dramatic coastal cliffs meeting the sea"
     },
     "badge": {
-      "title": "Wander",
+      "title": "WhereTo",
       "subtitle": "Now in development"
     }
   },
@@ -60,8 +60,8 @@
     "lede": "While our inaugural product is already underway, it is only the first step in our innovation journey. VC Innovations Group is committed to continuously exploring new opportunities and bringing transformative ideas to market.",
     "featured": {
       "pill": "In development",
-      "title": "Wander",
-      "body": "Wander reimagines travel planning by starting with your budget, not your destination. Instead of asking where you want to go, Wander helps you discover where you can go by matching your travel budget, dates, and interests with personalized destinations and experiences that fit your unique travel vibe.",
+      "title": "WhereTo",
+      "body": "WhereTo reimagines travel planning by starting with your budget, not your destination. Instead of asking where you want to go, WhereTo helps you discover where you can go by matching your travel budget, dates, and interests with personalized destinations and experiences that fit your unique travel vibe.",
       "linkLabel": "Learn more →",
       "linkHref": "#contact",
       "image": {
@@ -72,7 +72,7 @@
     "mini": [
       {
         "pill": "Coming soon",
-        "title": "Social Cruising",
+        "title": "WhereTo Cruise",
         "body": "Planning a cruise with friends shouldn't require endless group texts, spreadsheets, and research. Our upcoming platform will help groups discover, compare, and coordinate cruise vacations based on budgets, travel preferences, and shared interests—all in one collaborative experience.",
         "image": {
           "src": "https://images.pexels.com/photos/969462/pexels-photo-969462.jpeg",
