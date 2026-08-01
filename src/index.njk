@@ -10,7 +10,7 @@ layout: base.njk
       </a>
       <nav class="nav-links">
         {%- for link in site.nav %}
-        <a href="{{ link.href }}">{{ link.label }}</a>
+        <a href="{{ link.href }}"{% if link.newTab %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
         {%- endfor %}
       </nav>
       <div class="nav-cta">
@@ -28,8 +28,8 @@ layout: base.njk
         <h1>{{ copy.hero.title.pre }}<span class="italic">{{ copy.hero.title.accent }}</span>{{ copy.hero.title.post }}</h1>
         <p class="lede">{{ copy.hero.lede }}</p>
         <div class="cta">
-          <a class="btn btn-primary" href="{{ copy.hero.primaryBtn.href }}">{{ copy.hero.primaryBtn.label }}</a>
-          <a class="btn btn-ghost" href="{{ copy.hero.ghostBtn.href }}">{{ copy.hero.ghostBtn.label }}</a>
+          <a class="btn btn-primary" href="{{ copy.hero.primaryBtn.href }}"{% if copy.hero.primaryBtn.newTab %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ copy.hero.primaryBtn.label }}</a>
+          <a class="btn btn-ghost" href="{{ copy.hero.ghostBtn.href }}"{% if copy.hero.ghostBtn.newTab %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ copy.hero.ghostBtn.label }}</a>
         </div>
       </div>
       <div class="hero-media reveal">
@@ -83,7 +83,7 @@ layout: base.njk
           <span class="pill"><span class="dot"></span>{{ copy.ventures.featured.pill }}</span>
           <h3>{{ copy.ventures.featured.title }}</h3>
           <p>{{ copy.ventures.featured.body }}</p>
-          <a class="arrow-link" href="{{ copy.ventures.featured.linkHref }}">{{ copy.ventures.featured.linkLabel }}</a>
+          <a class="arrow-link" href="{{ copy.ventures.featured.linkHref }}"{% if copy.ventures.featured.linkNewTab %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ copy.ventures.featured.linkLabel }}</a>
         </div>
       </div>
 
@@ -153,7 +153,7 @@ layout: base.njk
             <h4>{{ col.heading }}</h4>
             {%- for link in col.links %}
             {%- if link.href %}
-            <a href="{{ link.href }}">{{ link.label }}</a>
+            <a href="{{ link.href }}"{% if link.newTab %} target="_blank" rel="noopener noreferrer"{% endif %}>{{ link.label }}</a>
             {%- else %}
             <span>{{ link.label }}</span>
             {%- endif %}

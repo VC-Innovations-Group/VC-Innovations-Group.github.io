@@ -67,6 +67,7 @@ content:
         fields:
           - { name: label, label: Label, type: string }
           - { name: href, label: Link, type: string }
+          - { name: newTab, label: "Open in new tab", type: boolean }
       - name: footerCols
         label: Footer columns
         type: object
@@ -80,6 +81,7 @@ content:
             fields:
               - { name: label, label: Label, type: string }
               - { name: href, label: "Link (leave blank for plain text)", type: string }
+              - { name: newTab, label: "Open in new tab", type: boolean }
 
   # ───────────────────────── Page content ─────────────────────────
   - name: content
@@ -106,12 +108,14 @@ content:
             fields:
               - { name: label, label: Label, type: string }
               - { name: href, label: Link, type: string }
+              - { name: newTab, label: "Open in new tab", type: boolean }
           - name: ghostBtn
             label: Secondary button
             type: object
             fields:
               - { name: label, label: Label, type: string }
               - { name: href, label: Link, type: string }
+              - { name: newTab, label: "Open in new tab", type: boolean }
           - name: image
             label: Hero image
             type: object
@@ -169,6 +173,7 @@ content:
               - { name: body, label: Body, type: text }
               - { name: linkLabel, label: Link label, type: string }
               - { name: linkHref, label: Link, type: string }
+              - { name: linkNewTab, label: "Open in new tab", type: boolean }
               - name: image
                 label: Image
                 type: object

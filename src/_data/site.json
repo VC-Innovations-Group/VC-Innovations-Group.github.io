@@ -10,19 +10,23 @@
   "nav": [
     {
       "label": "Strategy",
-      "href": "#approach"
+      "href": "#approach",
+      "newTab": false
     },
     {
       "label": "Products",
-      "href": "#ventures"
+      "href": "#ventures",
+      "newTab": false
     },
     {
       "label": "About",
-      "href": "#about"
+      "href": "#about",
+      "newTab": false
     },
     {
       "label": "Contact",
-      "href": "#contact"
+      "href": "#contact",
+      "newTab": false
     }
   ],
   "footerCols": [
@@ -31,15 +35,18 @@
       "links": [
         {
           "label": "Strategy",
-          "href": "#approach"
+          "href": "#approach",
+          "newTab": false
         },
         {
           "label": "Products",
-          "href": "#ventures"
+          "href": "#ventures",
+          "newTab": false
         },
         {
           "label": "About",
-          "href": "#about"
+          "href": "#about",
+          "newTab": false
         }
       ]
     },
@@ -48,7 +55,8 @@
       "links": [
         {
           "label": "WhereTo",
-          "href": "https://wheretotrips.com/"
+          "href": "https://wheretotrips.com/",
+          "newTab": true
         },
         {
           "label": "More soon"
@@ -60,7 +68,8 @@
       "links": [
         {
           "label": "vfratto@vcinnovationsgroup.com",
-          "href": "mailto:vfratto@vcinnovationsgroup.com"
+          "href": "mailto:vfratto@vcinnovationsgroup.com",
+          "newTab": false
         },
         {
           "label": "San Antonio, TX"

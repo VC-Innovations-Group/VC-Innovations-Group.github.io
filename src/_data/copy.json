@@ -8,11 +8,13 @@
     "lede": "VC Innovations Group LLC is a technology and innovation company focused on developing scalable digital products, software platforms, and AI-driven solutions that solve real-world business challenges. Founded by industry veterans with deep expertise in technology, marketing, data, and product development, we transform ideas into market-ready solutions that drive growth, efficiency, and competitive advantage. Through a combination of innovation, strategic partnerships, and customer-centric design, VC Innovations Group creates products and services that empower businesses and consumers to thrive in an increasingly digital world.",
     "primaryBtn": {
       "label": "See our work",
-      "href": "#ventures"
+      "href": "#ventures",
+      "newTab": false
     },
     "ghostBtn": {
       "label": "Contact",
-      "href": "#contact"
+      "href": "#contact",
+      "newTab": false
     },
     "image": {
       "src": "/media/oniPhone_2.png",
@@ -63,6 +65,7 @@
       "body": "WhereTo takes the guesswork out of travel planning by focusing on what matters most—your interests, your vibe, and your budget. Simply tell us what kind of experience you're looking for, and WhereTo uncovers destinations and itineraries that align with your travel style and spending goals. The result is a smarter, more inspiring way to discover where to go next.",
       "linkLabel": "Learn more →",
       "linkHref": "https://wheretotrips.com/",
+      "linkNewTab": true,
       "image": {
         "src": "https://images.pexels.com/photos/33851769/pexels-photo-33851769.jpeg",
         "alt": "Whitewashed village with blue domes overlooking the sea"
