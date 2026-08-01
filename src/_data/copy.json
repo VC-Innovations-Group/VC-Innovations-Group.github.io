@@ -22,7 +22,9 @@
     },
     "badge": {
       "title": "WhereTo",
-      "subtitle": "Now in development"
+      "subtitle": "Now in development",
+      "href": "https://wheretotrips.com/",
+      "newTab": true
     }
   },
   "approach": {

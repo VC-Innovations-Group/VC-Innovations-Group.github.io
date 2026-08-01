@@ -141,7 +141,10 @@
       background: var(--card); border: 1px solid var(--wg200);
       border-radius: var(--radius-md); padding: 16px 20px; box-shadow: var(--shadow-md);
       display: flex; align-items: center; gap: 14px; max-width: 250px;
+      transition: transform .18s ease, box-shadow .18s ease;
     }
+    a.hero-badge { cursor: pointer; }
+    a.hero-badge:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
     .hero-badge .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--rust); flex-shrink: 0;
       box-shadow: 0 0 0 4px rgba(184,92,56,0.15); }
     .hero-badge .t { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--navy); line-height: 1.2; }

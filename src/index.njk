@@ -34,13 +34,21 @@ layout: base.njk
       </div>
       <div class="hero-media reveal">
         <img src="{{ copy.hero.image.src }}" alt="{{ copy.hero.image.alt }}" loading="eager" />
+        {%- if copy.hero.badge.href %}
+        <a class="hero-badge" href="{{ copy.hero.badge.href }}"{% if copy.hero.badge.newTab %} target="_blank" rel="noopener noreferrer"{% endif %}>
+        {%- else %}
         <div class="hero-badge">
+        {%- endif %}
           <span class="dot"></span>
           <div>
             <div class="t">{{ copy.hero.badge.title }}</div>
             <div class="s">{{ copy.hero.badge.subtitle }}</div>
           </div>
+        {%- if copy.hero.badge.href %}
+        </a>
+        {%- else %}
         </div>
+        {%- endif %}
       </div>
     </div>
   </section>
