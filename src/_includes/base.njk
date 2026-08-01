@@ -133,7 +133,7 @@
     .hero .cta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 36px; }
     .hero-media { position: relative; }
     .hero-media img {
-      width: 100%; height: clamp(360px, 46vw, 540px); object-fit: cover;
+      width: 100%; aspect-ratio: 825 / 782; height: auto; object-fit: contain;
       border-radius: var(--radius-lg);
     }
     .hero-badge {
@@ -238,7 +238,6 @@
     @media (max-width: 920px) {
       .hero-grid { grid-template-columns: 1fr; }
       .hero-media { order: -1; }
-      .hero-media img { height: clamp(280px, 60vw, 420px); }
       .feature, .about { grid-template-columns: 1fr; }
       .feature .body { padding: 0 clamp(24px, 6vw, 40px) clamp(32px, 6vw, 44px); }
       .feature .media img { min-height: 300px; height: 320px; }
