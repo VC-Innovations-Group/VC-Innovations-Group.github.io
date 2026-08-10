@@ -79,6 +79,7 @@
       --wg400: #AEB4BB;
       --wg500: #8A9098;
       --wg600: #5C616A;
+      --footer: #262626;
 
       /* ── Fonts (CMS-editable) ─────────────────────── */
       --serif: {{ hf.stack | safe }};
@@ -249,17 +250,19 @@
     .cta-band .italic { color: #7FC7EE; }
     .cta-band p { color: rgba(240,235,224,0.7); max-width: 48ch; margin: 0 auto 32px; }
 
-    /* ── Footer ─────────────────────────────── */
-    footer { border-top: 1px solid var(--wg200); padding: 56px 0 40px; }
+    /* ── Footer (charcoal, matches wheretotrips.com) ─────────────── */
+    footer { background: var(--footer); padding: 56px 0 40px; }
+    footer .brand .mark { background: var(--rust); }
+    footer .brand .name { color: var(--cream); }
     .foot-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 28px; align-items: flex-start; }
     .foot-links { display: flex; gap: 40px; flex-wrap: wrap; }
-    .foot-col h4 { font-family: var(--sans); font-weight: 500; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--wg500); margin-bottom: 14px; }
-    .foot-col a, .foot-col span { display: block; font-size: 13px; color: var(--wg600); margin-bottom: 9px; }
-    .foot-col a:hover { color: var(--rust); }
-    .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--wg200); }
-    .foot-bottom span { font-size: 11px; color: var(--wg500); letter-spacing: 0.5px; }
-    .foot-bottom a { color: var(--wg500); }
-    .foot-bottom a:hover { color: var(--rust); }
+    .foot-col h4 { font-family: var(--sans); font-weight: 500; font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 14px; }
+    .foot-col a, .foot-col span { display: block; font-size: 13px; color: rgba(255,255,255,0.7); margin-bottom: 9px; }
+    .foot-col a:hover { color: #fff; }
+    .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 48px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12); }
+    .foot-bottom span { font-size: 11px; color: rgba(255,255,255,0.38); letter-spacing: 0.5px; }
+    .foot-bottom a { color: rgba(255,255,255,0.38); }
+    .foot-bottom a:hover { color: rgba(255,255,255,0.75); }
 
     /* ── Reveal animation ─────────────────────────────── */
     .reveal { opacity: 0; transform: translateY(20px); transition: opacity .7s ease, transform .7s ease; }
