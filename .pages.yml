@@ -13,20 +13,21 @@ content:
     path: src/_data/theme.json
     fields:
       - name: colors
-        label: Brand colors (hex, e.g. #B85C38)
+        label: Brand colors (hex, e.g. #209CE0)
         type: object
         fields:
-          - { name: cream, label: "Page background (cream)", type: string }
-          - { name: card, label: "Card surface", type: string }
-          - { name: navy, label: "Primary text / dark", type: string }
+          - { name: cream, label: "Page background", type: string }
+          - { name: card, label: "Card / alternate section surface", type: string }
+          - { name: navy, label: "Primary text / dark (charcoal)", type: string }
           - { name: navyLight, label: "Navy light", type: string }
-          - { name: rust, label: "Accent (rust)", type: string }
+          - { name: rust, label: "Accent (azure)", type: string }
       - { name: maxWidth, label: "Max content width (px)", type: number }
       - name: headingFont
         label: Heading font
         type: select
         options:
           values:
+            - { name: rcl-morland, label: "RCL Morland (matches wheretotrips.com / the app)" }
             - { name: dm-serif, label: DM Serif Display }
             - { name: playfair, label: Playfair Display }
             - { name: fraunces, label: Fraunces }
@@ -38,6 +39,7 @@ content:
         type: select
         options:
           values:
+            - { name: noto-sans, label: "Noto Sans (matches wheretotrips.com / the app)" }
             - { name: inter, label: Inter }
             - { name: work-sans, label: Work Sans }
             - { name: dm-sans, label: DM Sans }

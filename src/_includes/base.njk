@@ -5,7 +5,8 @@
   "fraunces":     { "stack": "'Fraunces', Georgia, serif",           "param": "Fraunces:ital,wght@0,400;0,600;1,400;1,600" },
   "cormorant":    { "stack": "'Cormorant Garamond', Georgia, serif", "param": "Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600" },
   "lora":         { "stack": "'Lora', Georgia, serif",               "param": "Lora:ital,wght@0,500;0,600;1,500;1,600" },
-  "libre-caslon": { "stack": "'Libre Caslon Display', Georgia, serif", "param": "Libre+Caslon+Display" }
+  "libre-caslon": { "stack": "'Libre Caslon Display', Georgia, serif", "param": "Libre+Caslon+Display" },
+  "rcl-morland":  { "stack": "'RCL Morland', Georgia, serif",        "param": "" }
 } -%}
 {%- set bodyFonts = {
   "inter":        { "stack": "'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif", "param": "Inter:wght@400;500;600;700" },
@@ -14,7 +15,8 @@
   "plus-jakarta": { "stack": "'Plus Jakarta Sans', system-ui, sans-serif", "param": "Plus+Jakarta+Sans:wght@400;500;600;700" },
   "nunito-sans":  { "stack": "'Nunito Sans', system-ui, sans-serif",    "param": "Nunito+Sans:wght@400;500;600;700" },
   "source-sans":  { "stack": "'Source Sans 3', system-ui, sans-serif",  "param": "Source+Sans+3:wght@400;500;600;700" },
-  "figtree":      { "stack": "'Figtree', system-ui, sans-serif",        "param": "Figtree:wght@400;500;600;700" }
+  "figtree":      { "stack": "'Figtree', system-ui, sans-serif",        "param": "Figtree:wght@400;500;600;700" },
+  "noto-sans":    { "stack": "'Noto Sans', system-ui, -apple-system, sans-serif", "param": "Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400" }
 } -%}
 {%- set hf = headingFonts[theme.headingFont] or headingFonts["dm-serif"] -%}
 {%- set bf = bodyFonts[theme.bodyFont] or bodyFonts["inter"] -%}
@@ -32,9 +34,36 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family={{ hf.param }}&family={{ bf.param }}&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?{% if hf.param %}family={{ hf.param }}&{% endif %}family={{ bf.param }}&display=swap" rel="stylesheet" />
 
   <style>
+    {%- if theme.headingFont == "rcl-morland" %}
+    /* ── RCL Morland (self-hosted, matches wheretotrips.com / the app) ── */
+    @font-face {
+      font-family: 'RCL Morland'; font-style: normal; font-weight: 400; font-display: swap;
+      src: url('/media/fonts/RCLMorland-Regular.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'RCL Morland'; font-style: italic; font-weight: 400; font-display: swap;
+      src: url('/media/fonts/RCLMorland-Italic.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'RCL Morland'; font-style: normal; font-weight: 500; font-display: swap;
+      src: url('/media/fonts/RCLMorland-Medium.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'RCL Morland'; font-style: normal; font-weight: 600; font-display: swap;
+      src: url('/media/fonts/RCLMorland-SemiBold.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'RCL Morland'; font-style: italic; font-weight: 600; font-display: swap;
+      src: url('/media/fonts/RCLMorland-SemiBoldItalic.ttf') format('truetype');
+    }
+    @font-face {
+      font-family: 'RCL Morland'; font-style: normal; font-weight: 700; font-display: swap;
+      src: url('/media/fonts/RCLMorland-Bold.ttf') format('truetype');
+    }
+    {%- endif %}
     :root {
       /* ── Brand palette (CMS-editable) ─────────────── */
       --cream:      {{ theme.colors.cream }};
@@ -97,7 +126,7 @@
       border: 1px solid transparent; transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease;
     }
     .btn-primary { background: var(--rust); color: var(--cream); }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(184,92,56,0.35); }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(32,156,224,0.32); }
     .btn-ghost { background: transparent; color: var(--navy); border-color: var(--wg300); }
     .btn-ghost:hover { border-color: var(--navy); transform: translateY(-2px); }
 
@@ -146,7 +175,7 @@
     a.hero-badge { cursor: pointer; }
     a.hero-badge:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
     .hero-badge .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--rust); flex-shrink: 0;
-      box-shadow: 0 0 0 4px rgba(184,92,56,0.15); }
+      box-shadow: 0 0 0 4px rgba(32,156,224,0.15); }
     .hero-badge .t { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--navy); line-height: 1.2; }
     .hero-badge .s { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--wg500); }
 
@@ -213,9 +242,9 @@
 
     /* ── CTA band ─────────────────────────────── */
     .cta-band { background: var(--navy); border-radius: var(--radius-lg); padding: clamp(48px, 7vw, 84px) clamp(28px, 5vw, 72px); text-align: center; }
-    .cta-band .eyebrow { color: #D9A38C; }
+    .cta-band .eyebrow { color: #7FC7EE; }
     .cta-band h2 { color: var(--cream); font-size: clamp(30px, 4.5vw, 52px); line-height: 1.1; margin: 16px auto 14px; max-width: 16ch; }
-    .cta-band .italic { color: #E0916B; }
+    .cta-band .italic { color: #7FC7EE; }
     .cta-band p { color: rgba(240,235,224,0.7); max-width: 48ch; margin: 0 auto 32px; }
 
     /* ── Footer ─────────────────────────────── */
