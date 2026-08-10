@@ -72,13 +72,13 @@
       --navy-light: {{ theme.colors.navyLight }};
       --rust:       {{ theme.colors.rust }};
 
-      /* ── Warm-gray neutrals (fixed) ───────────────── */
-      --wg100: #F0EBE2;
-      --wg200: #E4DDD3;
-      --wg300: #D4CCC2;
-      --wg400: #B8B0A6;
-      --wg500: #9E9690;
-      --wg600: #5C5449;
+      /* ── Cool-gray neutrals (fixed) ───────────────── */
+      --wg100: #F7F9FA;
+      --wg200: #E2E7EB;
+      --wg300: #D2D8DD;
+      --wg400: #AEB4BB;
+      --wg500: #8A9098;
+      --wg600: #5C616A;
 
       /* ── Fonts (CMS-editable) ─────────────────────── */
       --serif: {{ hf.stack | safe }};
@@ -127,16 +127,18 @@
     }
     .btn-primary { background: var(--rust); color: var(--cream); }
     .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 26px rgba(32,156,224,0.32); }
-    .btn-ghost { background: transparent; color: var(--navy); border-color: var(--wg300); }
-    .btn-ghost:hover { border-color: var(--navy); transform: translateY(-2px); }
+    .btn-ghost { background: transparent; color: var(--navy); border-color: var(--wg300); transition: transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease, border-color .18s ease; }
+    .btn-ghost:hover { color: var(--cream); background: var(--rust); border-color: var(--rust); transform: translateY(-2px); }
 
     /* ── Header ─────────────────────────────── */
     header {
       position: sticky; top: 0; z-index: 50;
-      background: rgba(240,235,224,0.82);
-      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      background: rgba(242,245,247,0.92);
+      backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--wg200);
+      transition: box-shadow .3s ease;
     }
+    header.scrolled { box-shadow: 0 4px 20px rgba(20,30,40,0.08); }
     .nav { display: flex; align-items: center; justify-content: space-between; height: 72px; }
     .brand { display: flex; align-items: center; gap: 12px; }
     .brand .mark {
@@ -292,6 +294,11 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+    // Soft shadow under the sticky header once the page scrolls
+    const headerEl = document.querySelector('header');
+    const onScroll = () => headerEl.classList.toggle('scrolled', window.scrollY > 8);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
     // Lightweight scroll reveal
     const io = new IntersectionObserver((entries) => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
